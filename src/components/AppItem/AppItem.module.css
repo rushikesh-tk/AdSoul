@@ -1,0 +1,68 @@
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 0.1rem;
+    padding: 2rem;
+    box-sizing: border-box;
+    margin: 0.5rem 0;
+}
+
+.heading{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+}
+
+.icon{
+    --h: 3rem;
+    height: var(--h);
+    width: var(--h);
+    background-color: orange;
+    border-radius: 0.2rem;
+    margin-right: 0.5rem;
+}
+
+.name > h3 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.name > p{
+    margin: 0;
+    font-size: 0.7rem;
+    color: gray;
+}
+
+.details{
+    width: 100%;
+    display: flex;
+    margin-top: 1.5rem;
+}
+
+.details > div {
+    margin-right: 2rem;
+    
+}
+
+.details > div > p:first-child{
+    font-size: 0.7rem;
+    margin: 0;
+}
+
+.details > div > p:last-child{
+    font-size: 1.3rem;
+    margin: 0;
+    margin-top: 0.3rem;
+}
+
+.heading > svg{
+    color: #a2a2a2;
+}
