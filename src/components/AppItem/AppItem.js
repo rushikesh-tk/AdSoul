@@ -1,41 +1,45 @@
 import styles from './AppItem.module.css';
-import { ReactComponent as RightArrow} from '../../assets/arrow-right.svg';
+import { ReactComponent as RightArrow } from '../../assets/arrow-right.svg';
 
-const AppItem = () => {
+
+
+const AppItem = ({ name, publisher, stats, color }) => {
+    const { revenue, adRequest, adResponse, impressions } = stats;
+
     return (
         <div className={styles.container}>
             <div className={styles.heading}>
                 <div className={styles.title}>
-                    <div className={styles.icon}/>
-                    
+                    <div className={styles.icon} style={{ backgroundColor : color }} />
+
                     <div className={styles.name}>
-                        <h3>Dream 11</h3>
-                        <p>Publisher Name</p>
+                        <h3>{name}</h3>
+                        <p>{publisher}</p>
                     </div>
                 </div>
 
-                <RightArrow/>
+                <RightArrow />
             </div>
 
             <div className={styles.details}>
                 <div>
                     <p>Revenue</p>
-                    <p>Value</p>
+                    <p>${revenue}</p>
                 </div>
 
                 <div>
                     <p>Ad Requests</p>
-                    <p>Value</p>
+                    <p>{(adRequest/10e6).toFixed(1)}M</p>
                 </div>
 
                 <div>
                     <p>Ad Response</p>
-                    <p>Value</p>
+                    <p>{(adResponse/10e6).toFixed(1)}M</p>
                 </div>
 
                 <div>
                     <p>Impressions</p>
-                    <p>Value</p>
+                    <p>{(impressions/10e3).toFixed(1)}K</p>
                 </div>
             </div>
         </div>
