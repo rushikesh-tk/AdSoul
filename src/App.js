@@ -35,18 +35,18 @@ const dummyData = [
 const App = () => {
 
   const appQuery = useQuery('apps', () =>
-    fetch('https://api.npoint.io/4ca5aaf459a573940672').then(res => res.json())
+    fetch('https://api.npoint.io/adf6676a313fa01f787d').then(res => res.json())
   )
 
 
   return (
     <Router>
       <Route path="/" exact >{
-        appQuery.isLoading ? <h2>Loading</h2> : <HomeScreen apps={dummyData || appQuery.data} />
+        appQuery.isLoading ? <h2>Loading</h2> : <HomeScreen apps={appQuery.data || dummyData} />
       }</Route>
 
       <Route path="/app/:id">
-        {appQuery.isLoading ? <h2>Loading</h2> : <AppDetails apps={dummyData || appQuery.data} />}
+        {appQuery.isLoading ? <h2>Loading</h2> : <AppDetails apps={appQuery.data || dummyData} />}
       </Route>
     </Router>
 
