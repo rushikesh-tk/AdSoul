@@ -84,3 +84,18 @@
     padding: var(--padding);
     overflow-y: auto;
 }
+
+@media only screen and (max-width: 500px){
+    .container{
+        flex-direction: column;
+    }
+
+    .left, .right{
+        width: 100%;
+        height: unset;
+    }
+
+    .features{
+        display: none;
+    }
+}

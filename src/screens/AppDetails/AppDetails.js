@@ -10,6 +10,7 @@ import { getColorFromId } from '../../utils';
 const AppDetails = ({ apps }) => {
 
     const { id } = useParams();
+
     const app = apps.find(e => e.id === id);
 
     const { isLoading, data } = useQuery('appDetail' + id, () =>

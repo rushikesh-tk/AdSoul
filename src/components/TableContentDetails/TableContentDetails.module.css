@@ -1,6 +1,9 @@
 .detailLine{
     width: 100%;
     display: flex;
+    border-style: solid;
+    border-color: #f3f3f3;
+    border-width: 0 0 0.1rem 0;
 }
 
 .detailLine > p{
@@ -10,4 +13,6 @@
     font-weight: 400;
     font-size: 0.9rem;
     color: #685b63;
+    min-width: 6rem;
+    
 }

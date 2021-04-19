@@ -31,9 +31,7 @@ const Homescreen = ({apps}) => {
                 return data;
             })
     )
-
-    console.log(apps)
-
+    
     return (
         <div className={styles.container}>
             <section className={styles.left}>
