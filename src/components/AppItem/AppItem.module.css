@@ -63,6 +63,6 @@
     margin-top: 0.3rem;
 }
 
-.heading > svg{
+.heading > a > svg{
     color: #a2a2a2;
 }

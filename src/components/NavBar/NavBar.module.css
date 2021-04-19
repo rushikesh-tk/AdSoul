@@ -1,0 +1,16 @@
+.nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 2rem 3rem;
+    box-sizing: border-box;
+    background-color: #7164ff;
+}
+
+.nav > a {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    text-decoration: none;
+}

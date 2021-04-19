@@ -8,16 +8,13 @@ import { ReactComponent as Icon4 } from "../../assets/icon4.svg";
 import { ReactComponent as Settings } from "../../assets/settings.svg";
 import AppItem from '../../components/AppItem/AppItem';
 import { useQuery } from 'react-query';
+import { getColorFromId } from '../../utils';
 
-const colors = ["red", "orange", "blue", "pink", "turquoise"];
 
-const Homescreen = () => {
 
-    const appQuery = useQuery('apps', () =>
-        fetch('https://api.npoint.io/54d09df281f91e8c146f').then(res => res.json())
-    )
+const Homescreen = ({apps}) => {
 
-    const appStatsQuery = useQuery('appStats', () =>
+    const { isLoading, data } = useQuery('appStats', () =>
         fetch('https://api.npoint.io/d734975d2aee62d197ef').then(res => res.json())
             .then(data => {
                 Object.entries(data).forEach(([key, value]) => {
@@ -35,7 +32,7 @@ const Homescreen = () => {
             })
     )
 
-    const loading = appQuery.isLoading || appStatsQuery.isLoading;
+    console.log(apps)
 
     return (
         <div className={styles.container}>
@@ -79,13 +76,14 @@ const Homescreen = () => {
                 </div>
 
                 <div className={styles.apps}>
-                    {loading ? <p>Loading!!!</p> : appQuery.data.map(item => {
+                    {isLoading ? <p>Loading!!!</p> : apps.length && apps.map(item => {
                         return <AppItem
                             key={item.id}
                             name={item.appName}
                             publisher={item.publisherName}
-                            stats={appStatsQuery.data[item.id]}
-                            color={colors[item.id % colors.length]}
+                            stats={data[item.id]}
+                            color={getColorFromId(item.id)}
+                            id={item.id}
                         />
                     })}
                 </div>

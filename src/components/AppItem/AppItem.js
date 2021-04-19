@@ -1,9 +1,10 @@
 import styles from './AppItem.module.css';
 import { ReactComponent as RightArrow } from '../../assets/arrow-right.svg';
+import { Link } from 'react-router-dom';
 
 
 
-const AppItem = ({ name, publisher, stats, color }) => {
+const AppItem = ({ id, name, publisher, stats, color }) => {
     const { revenue, adRequest, adResponse, impressions } = stats;
 
     return (
@@ -17,8 +18,10 @@ const AppItem = ({ name, publisher, stats, color }) => {
                         <p>{publisher}</p>
                     </div>
                 </div>
-
-                <RightArrow />
+                <Link to={`/app/${id}`}>
+                    <RightArrow />
+                </Link>
+                
             </div>
 
             <div className={styles.details}>
