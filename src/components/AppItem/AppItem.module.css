@@ -13,11 +13,13 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .title{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .icon{
@@ -45,6 +47,7 @@
     width: 100%;
     display: flex;
     margin-top: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .details > div {
@@ -68,10 +71,6 @@
 }
 
 @media only screen and (max-width: 500px){
-    .details{
-        flex-wrap: wrap;
-    }
-
     .details > div {
         margin-bottom: 0.7rem;
     }
